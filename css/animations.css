@@ -1,0 +1,164 @@
+/* ═══════════════════════════════════════════════════════════════════
+   SYMBIOTIERRA – ANIMATIONS & VISUAL EFFECTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Scroll Triggered Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--delay, 0s);
+    will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loader Spin & Pulse */
+@keyframes loaderSpin {
+    0% {
+        transform: rotate(0deg);
+        stroke-dashoffset: 280;
+    }
+    50% {
+        stroke-dashoffset: 70;
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        stroke-dashoffset: 280;
+    }
+}
+
+@keyframes loaderPulse {
+    0% {
+        transform: scale(0.92);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.05);
+        opacity: 1;
+        filter: drop-shadow(0 0 10px rgba(47, 168, 79, 0.8));
+    }
+}
+
+/* Pulse Dot */
+@keyframes pulseDot {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.5;
+    }
+}
+
+/* Scroll Droplet */
+@keyframes scrollDrop {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+    40% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+    }
+    80% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+        opacity: 0;
+    }
+}
+
+/* DNA Double Helix */
+@keyframes helixRotate {
+    0% {
+        transform: rotate(0deg) scaleY(0.7);
+    }
+    50% {
+        transform: rotate(180deg) scaleY(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scaleY(0.7);
+    }
+}
+
+/* Heat Map Spot Breathing */
+@keyframes pulseHeat {
+    0% {
+        transform: scale(0.85);
+        opacity: 0.45;
+    }
+    100% {
+        transform: scale(1.25);
+        opacity: 0.85;
+    }
+}
+
+/* Floating Elements (e.g. Drones & Sensors) */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+}
+
+.floating {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Shimmer Effect for Cards & Bars */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer-active {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s infinite;
+}
+
+/* Scanline Effect for High-Tech Feel */
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(1000%);
+    }
+}
+
+.scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green-light), transparent);
+    opacity: 0.4;
+    animation: scanline 5s linear infinite;
+    pointer-events: none;
+}

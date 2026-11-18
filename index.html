@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>SymbioTierra – Reescribiendo el código de la naturaleza</title>
+    <meta name="description" content="SymbioTierra: restauración integral de ecosistemas mediante biotecnología fúngica, robótica autónoma e inteligencia artificial. Sistema Eco-Enjambre V3.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         LOADER
+    ═══════════════════════════════════════════════════════════════ -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <svg viewBox="0 0 100 100" class="loader-svg">
+                    <circle cx="50" cy="50" r="45" class="loader-circle" />
+                    <path d="M50 15 C30 30, 20 50, 50 85 C80 50, 70 30, 50 15Z" class="loader-leaf" />
+                </svg>
+            </div>
+            <p class="loader-text">Inicializando ecosistema...</p>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         NAVIGATION (RESPONSIVE DESKTOP & MOBILE)
+    ═══════════════════════════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" width="38" height="38">
+                        <circle cx="20" cy="20" r="18" fill="none" stroke="var(--green)" stroke-width="2"/>
+                        <path d="M20 6 C13 15, 8 22, 20 34 C32 22, 27 15, 20 6Z" fill="var(--green)" opacity="0.85"/>
+                        <circle cx="20" cy="8" r="3.5" fill="var(--blue)"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Symbio<span class="logo-accent">Tierra</span></span>
+            </a>
+
+            <!-- Desktop Navigation Links (> 1180px) -->
+            <div class="nav-desktop-links" id="navDesktopLinks">
+                <a href="#about" class="nav-link">El Problema</a>
+                <a href="#service" class="nav-link">Eco-Enjambre</a>
+                <a href="#drone-3d" class="nav-link nav-link-featured">
+                    <span>Dron 3D</span>
+                    <span class="badge-pill-3d">CAD</span>
+                </a>
+                <a href="#biocapsule" class="nav-link">Bio-Cápsula</a>
+                <a href="#technology" class="nav-link">Tecnología</a>
+                <a href="#dashboard" class="nav-link">Dashboard</a>
+                <a href="#team" class="nav-link">Equipo</a>
+                <a href="#calculator" class="nav-link">Calculadora</a>
+                <a href="#faq" class="nav-link">Defensa</a>
+                <a href="#invest" class="nav-cta">Invertir ($150K)</a>
+            </div>
+
+            <!-- Mobile Hamburger Toggle (<= 1180px) -->
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer Backdrop -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <!-- Mobile Navigation Drawer (<= 1180px) -->
+    <aside class="nav-mobile-drawer" id="navMobileDrawer" aria-label="Menú de navegación móvil">
+        <div class="drawer-header">
+            <div class="drawer-logo">
+                <div class="logo-icon" style="width: 30px; height: 30px;">
+                    <svg viewBox="0 0 40 40" width="30" height="30">
+                        <circle cx="20" cy="20" r="18" fill="none" stroke="var(--green)" stroke-width="2"/>
+                        <path d="M20 6 C13 15, 8 22, 20 34 C32 22, 27 15, 20 6Z" fill="var(--green)" opacity="0.85"/>
+                        <circle cx="20" cy="8" r="3.5" fill="var(--blue)"/>
+                    </svg>
+                </div>
+                <span class="logo-text" style="font-size: 1.15rem;">Symbio<span class="logo-accent">Tierra</span></span>
+            </div>
+            <button class="drawer-close" id="drawerClose" aria-label="Cerrar menú">&times;</button>
+        </div>
+
+        <div class="drawer-body">
+            <span class="drawer-section-label">Modelado 3D & Robótica</span>
+            <div class="drawer-links-group">
+                <a href="#drone-3d" class="drawer-link featured-drawer-link">
+                    <span class="drawer-icon">🛸</span>
+                    <div>
+                        <strong>Visor 3D del Dron</strong>
+                        <small>Hexacóptero interactivo con logotipo</small>
+                    </div>
+                    <span class="drawer-badge">V3 CAD</span>
+                </a>
+                <a href="#biocapsule" class="drawer-link">
+                    <span class="drawer-icon">🧬</span>
+                    <div>
+                        <strong>Anatomía Bio-Cápsula</strong>
+                        <small>Núcleo fúngico y micorrizas</small>
+                    </div>
+                </a>
+                <a href="#service" class="drawer-link">
+                    <span class="drawer-icon">🛰️</span>
+                    <div>
+                        <strong>Sistema Eco-Enjambre</strong>
+                        <small>Flota colaborativa en 3 fases</small>
+                    </div>
+                </a>
+            </div>
+
+            <span class="drawer-section-label">Proyecto & Tecnología</span>
+            <div class="drawer-links-group">
+                <a href="#about" class="drawer-link">
+                    <span class="drawer-icon">⚠️</span>
+                    <div>
+                        <strong>El Problema Ecológico</strong>
+                        <small>Minería, deforestación y crisis</small>
+                    </div>
+                </a>
+                <a href="#technology" class="drawer-link">
+                    <span class="drawer-icon">🧠</span>
+                    <div>
+                        <strong>Stack DeepTech</strong>
+                        <small>IA Edge, LoRaWAN y Teledetección</small>
+                    </div>
+                </a>
+                <a href="#team" class="drawer-link">
+                    <span class="drawer-icon">👥</span>
+                    <div>
+                        <strong>Equipo Fundador</strong>
+                        <small>5 Ingenieros UNIMAR</small>
+                    </div>
+                </a>
+            </div>
+
+            <span class="drawer-section-label">Herramientas & Negocio</span>
+            <div class="drawer-links-group">
+                <a href="#dashboard" class="drawer-link">
+                    <span class="drawer-icon">📊</span>
+                    <div>
+                        <strong>Dashboard en Tiempo Real</strong>
+                        <small>Telemetría en Mérida, Guayana, Amazonas</small>
+                    </div>
+                </a>
+                <a href="#calculator" class="drawer-link">
+                    <span class="drawer-icon">🧮</span>
+                    <div>
+                        <strong>Calculadora de Impacto & ROI</strong>
+                        <small>Métricas financieras personalizadas</small>
+                    </div>
+                </a>
+                <a href="#faq" class="drawer-link">
+                    <span class="drawer-icon">🛡️</span>
+                    <div>
+                        <strong>Defensa Académica</strong>
+                        <small>Preguntas clave del jurado UNIMAR</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="drawer-actions">
+                <a href="#invest" class="btn btn-primary btn-block">
+                    <span>💼 Ronda Seed: Invertir $150K</span>
+                </a>
+                <button class="btn btn-outline btn-block" id="drawerStandBtn">
+                    <span>📡 Consola Radar Stand UNIMAR</span>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <div class="particles" id="particles"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-on-scroll">
+                <span class="badge-dot"></span>
+                EcoTech · Biotecnología Ambiental & Robótica Autónoma
+            </div>
+            <h1 class="hero-title animate-on-scroll">
+                Reescribiendo el<br>
+                <span class="gradient-text">código de la</span><br>
+                <span class="gradient-text">naturaleza.</span>
+            </h1>
+            <p class="hero-subtitle animate-on-scroll">
+                Restauramos ecosistemas degradados combinando <strong>biotecnología fúngica</strong>, 
+                <strong>drones autónomos</strong> e <strong>inteligencia artificial</strong>. 
+                Donde la naturaleza tarda décadas, nosotros actuamos en meses.
+            </p>
+            <div class="hero-actions animate-on-scroll">
+                <a href="#drone-3d" class="btn btn-primary">
+                    <span>Ver Dron en 3D Interactivo</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#service" class="btn btn-outline">
+                    <span>Sistema Eco-Enjambre V3</span>
+                </a>
+                <a href="#calculator" class="btn btn-outline">
+                    <span>Calcular ROI</span>
+                </a>
+            </div>
+            <div class="hero-stats animate-on-scroll">
+                <div class="stat">
+                    <span class="stat-number" data-count="70">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Reducción del tiempo de reforestación</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="85">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Tasa de germinación y purificación</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="100">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Intervención autónoma simultánea (tierra + agua)</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about" class="scroll-indicator">
+                <span>Explorar</span>
+                <div class="scroll-line"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         ABOUT / EL PROBLEMA
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Problemática Real</span>
+                <h2 class="section-title">La velocidad de degradación supera los métodos manuales</h2>
+                <p class="section-subtitle">
+                    En la Amazonía y los Andes venezolanos, la deforestación y la minería ilegal 
+                    destruyen hectáreas en días. Los métodos de siembra tradicional toman décadas en sanar la tierra.
+                </p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <circle cx="24" cy="24" r="22" fill="none" stroke="var(--red)" stroke-width="2" opacity="0.3"/>
+                            <path d="M14 34 L24 10 L34 34 Z" fill="none" stroke="var(--red)" stroke-width="2"/>
+                            <line x1="24" y1="18" x2="24" y2="26" stroke="var(--red)" stroke-width="2"/>
+                            <circle cx="24" cy="30" r="1.5" fill="var(--red)"/>
+                        </svg>
+                    </div>
+                    <h3>Deforestación Acelerada</h3>
+                    <p>Pérdida masiva de cubierta vegetal en zonas críticas del sur de Venezuela y la cuenca amazónica, inaccesibles para brigadas a pie.</p>
+                    <div class="problem-stat">
+                        <span class="problem-number">70%</span>
+                        <span>Más lento el proceso manual tradicional</span>
+                    </div>
+                </div>
+
+                <div class="problem-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <circle cx="24" cy="24" r="22" fill="none" stroke="var(--orange)" stroke-width="2" opacity="0.3"/>
+                            <path d="M12 32 Q18 20, 24 28 Q30 36, 36 24" fill="none" stroke="var(--orange)" stroke-width="2"/>
+                            <circle cx="18" cy="16" r="4" fill="none" stroke="var(--orange)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Desertificación de Suelos</h3>
+                    <p>Suelos erosionados sin micorrizas ni microbioma activo, donde plantar semillas convencionales resulta en más del 80% de mortandad.</p>
+                    <div class="problem-stat">
+                        <span class="problem-number">décadas</span>
+                        <span>En regenerarse de manera espontánea</span>
+                    </div>
+                </div>
+
+                <div class="problem-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <circle cx="24" cy="24" r="22" fill="none" stroke="var(--blue)" stroke-width="2" opacity="0.3"/>
+                            <path d="M24 10 C20 18, 14 24, 14 30 C14 36, 18 38, 24 38 C30 38, 34 36, 34 30 C34 24, 28 18, 24 10Z" fill="none" stroke="var(--blue)" stroke-width="2"/>
+                            <line x1="18" y1="28" x2="30" y2="28" stroke="var(--blue)" stroke-width="1.5" opacity="0.5"/>
+                            <line x1="20" y1="32" x2="28" y2="32" stroke="var(--blue)" stroke-width="1.5" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3>Contaminación Hídrica</h3>
+                    <p>Ríos y cuencas contaminadas por sedimentación y metales pesados. Ningún competidor actual en la región restaura tierra y agua simultáneamente.</p>
+                    <div class="problem-stat">
+                        <span class="problem-number">0</span>
+                        <span>Competidores con cura integral en la región</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solución Integrada -->
+            <div class="solution-banner animate-on-scroll">
+                <div class="solution-content">
+                    <span class="section-tag light">La Propuesta SymbioTierra</span>
+                    <h3>Redes Neuronales Artificiales + Redes de Micelio Naturales</h3>
+                    <p>
+                        Diseñamos una solución tecnológica escalable nacida en las aulas de <strong>Ingeniería de Sistemas de UNIMAR</strong>. 
+                        Combinamos el poder de la robótica aérea colectiva con la biotecnología fúngica para curar el ecosistema de forma 100% autónoma.
+                    </p>
+                </div>
+                <div class="solution-visual">
+                    <div class="dna-helix">
+                        <div class="helix-strand strand-1"></div>
+                        <div class="helix-strand strand-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SERVICE / ECO-ENJAMBRE V3
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="service" class="section service">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Modelo HaaS / SaaS</span>
+                <h2 class="section-title">Sistema Eco-Enjambre V3</h2>
+                <p class="section-subtitle">
+                    Hardware y software como servicio: un flujo autónomo de 3 fases que reduce 
+                    el tiempo de restauración en un 70% y elimina el riesgo humano en zonas inaccesibles.
+                </p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step animate-on-scroll" style="--delay: 0.1s">
+                    <div class="step-number">01</div>
+                    <div class="step-visual">
+                        <div class="step-icon-wrapper">
+                            <svg viewBox="0 0 64 64" width="64" height="64">
+                                <rect x="8" y="8" width="48" height="48" rx="8" fill="none" stroke="var(--blue)" stroke-width="2"/>
+                                <path d="M16 32 L32 16 L48 32 L32 48 Z" fill="var(--blue)" opacity="0.15"/>
+                                <circle cx="32" cy="32" r="6" fill="var(--blue)" opacity="0.4"/>
+                                <path d="M22 22 L42 42 M42 22 L22 42" stroke="var(--blue)" stroke-width="1.5" opacity="0.3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Fase 1: Escaneo 3D & Mapeo Hiperespectral</h3>
+                        <p>
+                            Enjambres de drones autónomos equipados con sensores multiespectrales e hiperespectrales 
+                            sobrevuelan la zona, generando mapas 3D térmicos y de composición bioquímica de suelos y aguas.
+                        </p>
+                        <ul class="step-features">
+                            <li>Detección de índices de vegetación (NDVI)</li>
+                            <li>Identificación de focos de contaminación hídrica</li>
+                            <li>Generación automática de mallas de disparo mediante IA</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="process-step animate-on-scroll" style="--delay: 0.2s">
+                    <div class="step-number">02</div>
+                    <div class="step-visual">
+                        <div class="step-icon-wrapper">
+                            <svg viewBox="0 0 64 64" width="64" height="64">
+                                <circle cx="32" cy="32" r="28" fill="none" stroke="var(--green)" stroke-width="2"/>
+                                <circle cx="32" cy="32" r="12" fill="var(--green)" opacity="0.15"/>
+                                <path d="M32 20 C28 26, 24 30, 32 44 C40 30, 36 26, 32 20Z" fill="var(--green)" opacity="0.5"/>
+                                <circle cx="32" cy="32" r="3" fill="var(--green)"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Fase 2: Disparo de Bio-Cápsulas & Esferas Purificadoras</h3>
+                        <p>
+                            Los drones ejecutan rutas de bombardeo balístico de precisión disparando <strong>Bio-Cápsulas</strong> 
+                            con micelio fúngico y semillas endémicas en tierra, y <strong>esferas biodegradables de biopolímeros</strong> 
+                            en cuerpos de agua para neutralizar contaminantes.
+                        </p>
+                        <ul class="step-features">
+                            <li>Penetración controlada en suelo árido</li>
+                            <li>Esferas acuáticas que absorben metales y biofloculan impurezas</li>
+                            <li>Tasa de germinación y purificación certificada > 85%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="process-step animate-on-scroll" style="--delay: 0.3s">
+                    <div class="step-number">03</div>
+                    <div class="step-visual">
+                        <div class="step-icon-wrapper">
+                            <svg viewBox="0 0 64 64" width="64" height="64">
+                                <rect x="6" y="14" width="52" height="36" rx="4" fill="none" stroke="var(--green-light)" stroke-width="2"/>
+                                <line x1="6" y1="24" x2="58" y2="24" stroke="var(--green-light)" stroke-width="1" opacity="0.5"/>
+                                <circle cx="20" cy="38" r="6" fill="var(--green-light)" opacity="0.2"/>
+                                <circle cx="38" cy="36" r="8" fill="var(--blue)" opacity="0.15"/>
+                                <path d="M12 44 L18 36 L24 40 L32 30 L40 34 L48 28 L54 32" fill="none" stroke="var(--green)" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Fase 3: Monitoreo IoT & Dashboard de Impacto</h3>
+                        <p>
+                            Se despliega una red de micro-sensores IoT de bajo consumo que transmiten datos ambientales en vivo. 
+                            El cliente sigue minuto a minuto la fijación de CO₂, regeneración biológica y calidad hídrica.
+                        </p>
+                        <ul class="step-features">
+                            <li>Telemetría ambiental en tiempo real</li>
+                            <li>Reportes automatizados para auditorías de RSE y Ecosocialismo</li>
+                            <li>Portal web y app móvil para corporaciones y gobiernos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         3D DRONE VIEWER SECTION (CAD PROCEDURAL THREE.JS MODEL)
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="drone-3d" class="section drone-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Gemelo Digital 3D · Hardware Oficial</span>
+                <h2 class="section-title">Explora el Dron Eco-Enjambre V3 en 3D</h2>
+                <p class="section-subtitle">
+                    Modelo tridimensional interactivo de precisión con el <strong>logotipo e icono oficial de SymbioTierra</strong> integrado en la cúpula dorsal y costados. 
+                    Gira, haz zoom e inspecciona cada subsistema de vuelo, sensores hiperespectrales y dispersión de Bio-Cápsulas.
+                </p>
+            </div>
+
+            <div class="drone-viewer-wrapper animate-on-scroll">
+                <!-- 3D Canvas Viewport -->
+                <div class="drone-viewport" id="drone3dContainer">
+                    <div class="drone-hud-top">
+                        <div class="drone-hud-badge">
+                            <span class="badge-dot"></span>
+                            <span>ECO-ENJAMBRE V3 · HEXACÓPTERO PBR 3D</span>
+                        </div>
+                        <div class="drone-hud-views">
+                            <button class="drone-view-btn active" data-drone-view="orbit">Perspectiva</button>
+                            <button class="drone-view-btn" data-drone-view="top">Superior (Planos)</button>
+                            <button class="drone-view-btn" data-drone-view="front">Frontal (Gimbal)</button>
+                            <button class="drone-view-btn" data-drone-view="side">Lateral (Perfil)</button>
+                            <button class="drone-view-btn" data-drone-view="payload">Tolva de Semillas</button>
+                        </div>
+                    </div>
+
+                    <div class="drone-hud-bottom">
+                        <div class="drone-tools-bar">
+                            <button class="drone-tool-btn active" id="droneBtnRotate">
+                                <span>⏸ Pausar Giro</span>
+                            </button>
+                            <button class="drone-tool-btn active" id="droneBtnRotors">
+                                <span>🟢 Rotores Activos</span>
+                            </button>
+                            <button class="drone-tool-btn" id="droneBtnWireframe">
+                                <span>⚡ Rayos X (CAD)</span>
+                            </button>
+                            <button class="drone-tool-btn" id="droneBtnResetView">
+                                <span>🔄 Reset</span>
+                            </button>
+                            <button class="drone-tool-btn" id="openBlueprintBtn" style="background: rgba(30,111,235,0.3); border-color: var(--blue);">
+                                <span>📐 Ver Planos CAD 2D</span>
+                            </button>
+                        </div>
+                        <div class="drone-touch-hint">
+                            👆 Arrastra con 1 dedo para rotar · Pellizca con 2 para zoom
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotspots & Tech Details below Canvas -->
+                <div class="drone-details-panel">
+                    <div class="drone-hotspots-selector">
+                        <button class="drone-hotspot-item active" data-hotspot="sensors">
+                            <span class="hotspot-number">1</span>
+                            <span>Sensores Hiperespectrales & Térmicos (Gimbal 3 Ejes)</span>
+                        </button>
+                        <button class="drone-hotspot-item" data-hotspot="capsules">
+                            <span class="hotspot-number">2</span>
+                            <span>Tolva de Bio-Cápsulas Balísticas (4 Cartuchos)</span>
+                        </button>
+                        <button class="drone-hotspot-item" data-hotspot="motors">
+                            <span class="hotspot-number">3</span>
+                            <span>Motores Brushless & Enjambre Hexacóptero</span>
+                        </button>
+                        <button class="drone-hotspot-item" data-hotspot="avionics">
+                            <span class="hotspot-number">4</span>
+                            <span>Aviónica Neural & Navegación LoRaWAN</span>
+                        </button>
+                    </div>
+
+                    <div class="drone-hotspot-info-box" id="droneHotspotInfo">
+                        <h4 style="color: var(--green-light); font-family: var(--font-heading); margin-bottom: 0.3rem;">Sensores Hiperespectrales & Térmicos</h4>
+                        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">Cámara estabilizada en gimbal de 3 ejes. Escanea índices NDVI, calidad hídrica y niveles de turbidez en tiempo real para determinar puntos exactos de dispersión.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         BIO-CAPSULE ANATOMY SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="biocapsule" class="section biocapsule-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Patente en Trámite</span>
+                <h2 class="section-title">Anatomía de la Bio-Cápsula V3</h2>
+                <p class="section-subtitle">
+                    Una píldora tecnológica recubierta de bioplástico biodegradable con el código genético 
+                    y fúngico necesario para reactivar un bosque completo.
+                </p>
+            </div>
+
+            <div class="capsule-showcase">
+                <div class="capsule-interactive-viewer animate-on-scroll" style="--delay: 0.1s">
+                    <div class="capsule-graphic">
+                        <div class="capsule-core-glow"></div>
+                        <svg class="capsule-svg" viewBox="0 0 200 200">
+                            <ellipse cx="100" cy="100" rx="75" ry="90" fill="none" stroke="var(--green)" stroke-width="3" stroke-dasharray="6 4" opacity="0.8"/>
+                            <ellipse cx="100" cy="100" rx="70" ry="85" fill="rgba(47, 168, 79, 0.15)"/>
+                            <circle cx="100" cy="100" r="50" fill="none" stroke="var(--blue)" stroke-width="2" stroke-dasharray="3 3"/>
+                            <path d="M100 50 Q115 75 100 100 Q85 125 100 150" stroke="var(--green-light)" stroke-width="1.8" fill="none"/>
+                            <path d="M60 100 Q85 110 100 100 Q120 90 140 100" stroke="var(--green-light)" stroke-width="1.8" fill="none"/>
+                            <ellipse cx="100" cy="100" rx="22" ry="30" fill="var(--green)"/>
+                            <circle cx="100" cy="92" r="4" fill="#fff"/>
+                            <circle cx="75" cy="80" r="4" fill="var(--blue-light)"/>
+                            <circle cx="125" cy="85" r="4" fill="var(--blue-light)"/>
+                            <circle cx="85" cy="125" r="3.5" fill="var(--blue-light)"/>
+                            <circle cx="120" cy="120" r="3.5" fill="var(--blue-light)"/>
+                        </svg>
+                    </div>
+                    <div style="text-align: center;">
+                        <span class="badge-dot" style="display: inline-block; margin-right: 6px;"></span>
+                        <strong style="color: var(--text-white); font-family: var(--font-heading);">Bio-Cápsula V3 (Modelo Balístico)</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Pasa el cursor por las capas para explorar su composición</p>
+                    </div>
+                </div>
+
+                <div class="capsule-layers-list">
+                    <div class="capsule-layer-card active animate-on-scroll" style="--delay: 0.15s">
+                        <div class="layer-header">
+                            <h4 class="layer-title">1. Cáscara de Biopolímero Fotosensible</h4>
+                            <span class="layer-badge">Capa Exterior</span>
+                        </div>
+                        <p class="layer-desc">Protege el núcleo durante la caída libre balística a más de 120 km/h. Se degrada orgánicamente con la radiación solar y la humedad en menos de 72 horas sin dejar residuos sintéticos.</p>
+                    </div>
+
+                    <div class="capsule-layer-card animate-on-scroll" style="--delay: 0.2s">
+                        <div class="layer-header">
+                            <h4 class="layer-title">2. Inóculo de Micelio Simbiótico (Micorrizas)</h4>
+                            <span class="layer-badge">Biotecnología Fúngica</span>
+                        </div>
+                        <p class="layer-desc">Activa redes subterráneas de intercambio de nutrientes, reteniendo agua y multiplicando la absorción de minerales por la raíz hasta en un 300% en suelos áridos o contaminados.</p>
+                    </div>
+
+                    <div class="capsule-layer-card animate-on-scroll" style="--delay: 0.25s">
+                        <div class="layer-header">
+                            <h4 class="layer-title">3. Núcleo Botánico de Semillas Endémicas</h4>
+                            <span class="layer-badge">Biodiversidad Nativa</span>
+                        </div>
+                        <p class="layer-desc">Especies endémicas venezolanas (Araguaney, Apamate, Bucare, Frailejón andino) seleccionadas por su resistencia y capacidad de fijación de carbono y nitrógeno.</p>
+                    </div>
+
+                    <div class="capsule-layer-card animate-on-scroll" style="--delay: 0.3s">
+                        <div class="layer-header">
+                            <h4 class="layer-title">4. Matriz Hidro-Nutritiva Retenedora</h4>
+                            <span class="layer-badge">Supervivencia</span>
+                        </div>
+                        <p class="layer-desc">Hidrogel orgánico que almacena hasta 50 veces su peso en agua, garantizando humedad durante los primeros 45 días críticos de germinación incluso en sequías severas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TECHNOLOGY / DEEPTECH
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="technology" class="section technology">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Stack Tecnológico</span>
+                <h2 class="section-title">Innovación DeepTech de Frontera</h2>
+                <p class="section-subtitle">
+                    Hardware, inteligencia artificial y biotecnología fúngica convergiendo para 
+                    automatizar la restauración ecológica a escala industrial.
+                </p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="tech-card-glow"></div>
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <path d="M24 4 L24 44" stroke="var(--blue)" stroke-width="2" opacity="0.3"/>
+                            <path d="M4 24 L44 24" stroke="var(--blue)" stroke-width="2" opacity="0.3"/>
+                            <circle cx="24" cy="24" r="8" fill="none" stroke="var(--blue)" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="16" fill="none" stroke="var(--blue)" stroke-width="1" opacity="0.5"/>
+                            <circle cx="24" cy="8" r="3" fill="var(--blue)"/>
+                            <circle cx="40" cy="24" r="3" fill="var(--blue)"/>
+                            <circle cx="24" cy="40" r="3" fill="var(--blue)"/>
+                            <circle cx="8" cy="24" r="3" fill="var(--blue)"/>
+                        </svg>
+                    </div>
+                    <h3>IA de Vuelo en Enjambre</h3>
+                    <p>Redes neuronales que coordinan trayectorias sin colisión para hasta 20 drones simultáneos, adaptándose a turbulencias andinas y vientos amazónicos.</p>
+                </div>
+
+                <div class="tech-card animate-on-scroll" style="--delay: 0.15s">
+                    <div class="tech-card-glow"></div>
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <path d="M24 8 L14 18 L14 30 L24 40 L34 30 L34 18 Z" fill="none" stroke="var(--green)" stroke-width="2"/>
+                            <path d="M24 8 L24 40" stroke="var(--green)" stroke-width="1" opacity="0.5"/>
+                            <path d="M14 18 L34 30" stroke="var(--green)" stroke-width="1" opacity="0.5"/>
+                            <path d="M34 18 L14 30" stroke="var(--green)" stroke-width="1" opacity="0.5"/>
+                            <circle cx="24" cy="24" r="4" fill="var(--green)" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3>Drones de Carga Balística</h3>
+                    <p>Chasis de fibra de carbono reforzada con tolvas de liberación neumática capaces de disparar 500 Bio-Cápsulas por hora por unidad con precisión milimétrica.</p>
+                </div>
+
+                <div class="tech-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="tech-card-glow"></div>
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <circle cx="24" cy="20" r="12" fill="none" stroke="var(--green-light)" stroke-width="2"/>
+                            <path d="M18 32 C18 38, 24 42, 24 42 C24 42, 30 38, 30 32" fill="none" stroke="var(--green-light)" stroke-width="2"/>
+                            <circle cx="24" cy="20" r="5" fill="var(--green-light)" opacity="0.2"/>
+                            <path d="M20 18 Q24 12, 28 18" fill="none" stroke="var(--green-light)" stroke-width="1.5"/>
+                            <path d="M20 22 Q24 28, 28 22" fill="none" stroke="var(--green-light)" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3>Biotecnología Fúngica</h3>
+                    <p>Laboratorios de cultivo de micelio endémico que reactivan la simbiosis planta-hongo en suelos estériles degradados por metales o quemas.</p>
+                </div>
+
+                <div class="tech-card animate-on-scroll" style="--delay: 0.25s">
+                    <div class="tech-card-glow"></div>
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <rect x="8" y="8" width="32" height="32" rx="4" fill="none" stroke="var(--blue)" stroke-width="2"/>
+                            <circle cx="18" cy="18" r="3" fill="var(--blue)" opacity="0.5"/>
+                            <circle cx="30" cy="18" r="3" fill="var(--blue)" opacity="0.5"/>
+                            <circle cx="18" cy="30" r="3" fill="var(--blue)" opacity="0.5"/>
+                            <circle cx="30" cy="30" r="3" fill="var(--blue)" opacity="0.5"/>
+                            <line x1="18" y1="18" x2="30" y2="18" stroke="var(--blue)" stroke-width="1"/>
+                            <line x1="18" y1="30" x2="30" y2="30" stroke="var(--blue)" stroke-width="1"/>
+                            <line x1="18" y1="18" x2="18" y2="30" stroke="var(--blue)" stroke-width="1"/>
+                            <line x1="30" y1="18" x2="30" y2="30" stroke="var(--blue)" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <h3>Malla de Micro-Sensores IoT</h3>
+                    <p>Estaciones flotantes y terrestres autónomas con baterías solares y enlace satelital LoRaWAN que miden pH hídrico, humedad de suelo y CO₂ en tiempo real.</p>
+                </div>
+
+                <div class="tech-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="tech-card-glow"></div>
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <rect x="6" y="12" width="36" height="24" rx="3" fill="none" stroke="var(--green)" stroke-width="2"/>
+                            <line x1="6" y1="20" x2="42" y2="20" stroke="var(--green)" stroke-width="1" opacity="0.4"/>
+                            <path d="M12 30 L18 24 L24 28 L30 22 L36 26" fill="none" stroke="var(--green)" stroke-width="2"/>
+                            <circle cx="12" cy="30" r="2" fill="var(--green)"/>
+                            <circle cx="36" cy="26" r="2" fill="var(--green)"/>
+                        </svg>
+                    </div>
+                    <h3>Dashboard de Impacto Auditado</h3>
+                    <p>Plataforma para clientes corporativos y gubernamentales con mapas de calor interactivos, índices NDVI y métricas auditables de cumplimiento ambiental.</p>
+                </div>
+
+                <div class="tech-card animate-on-scroll" style="--delay: 0.35s">
+                    <div class="tech-card-glow"></div>
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <path d="M24 6 L24 18 M24 30 L24 42" stroke="var(--green-light)" stroke-width="2"/>
+                            <path d="M6 24 L18 24 M30 24 L42 24" stroke="var(--green-light)" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="6" fill="none" stroke="var(--green-light)" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="12" fill="none" stroke="var(--green-light)" stroke-width="1" stroke-dasharray="4 4"/>
+                        </svg>
+                    </div>
+                    <h3>Purificación Acuática Bio-Polimérica</h3>
+                    <p>Esferas filtrantes que eliminan turbidez y neutralizan trazas de hidrocarburos y químicos sin generar subproductos tóxicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         DASHBOARD PREVIEW / SIMULADOR EN VIVO
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="dashboard" class="section dashboard-preview">
+        <div class="container">
+            <div class="dashboard-wrapper animate-on-scroll">
+                <div class="dashboard-info">
+                    <span class="section-tag">Dashboard de Impacto V3</span>
+                    <h2 class="section-title">El cliente ve florecer su inversión en vivo</h2>
+                    <p>
+                        A diferencia de los reportes en papel o Excel de las consultoras tradicionales, SymbioTierra 
+                        entrega un portal web interactivo y app móvil con telemetría en vivo de cada metro cuadrado regenerado.
+                    </p>
+                    <div class="dashboard-features">
+                        <div class="dash-feature">
+                            <div class="dash-feature-icon">📊</div>
+                            <div>
+                                <strong>Métricas Comprobables de RSE</strong>
+                                <span>Toneladas de CO₂ capturadas, litros de agua purificados y germinación auditada.</span>
+                            </div>
+                        </div>
+                        <div class="dash-feature">
+                            <div class="dash-feature-icon">🗺️</div>
+                            <div>
+                                <strong>Mapas de Calor Multiespectrales</strong>
+                                <span>Seguimiento satelital y de drones con visualización de índices NDVI por hectárea.</span>
+                            </div>
+                        </div>
+                        <div class="dash-feature">
+                            <div class="dash-feature-icon">📍</div>
+                            <div>
+                                <strong>Red de Hubs Operativos</strong>
+                                <span>Telemetría en tiempo real desde los hubs de Mérida, Puerto Ordaz y expansión Amazonas.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-mockup">
+                    <div class="mockup-window">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="mockup-title">dashboard.symbiotierra.com</span>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="mockup-sidebar">
+                                <div class="mock-menu-item active" title="Métricas en vivo"></div>
+                                <div class="mock-menu-item" title="Mapa 3D"></div>
+                                <div class="mock-menu-item" title="Enjambre Drones"></div>
+                                <div class="mock-menu-item" title="Reportes RSE"></div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="mock-stats-row">
+                                    <div class="mock-stat-card green">
+                                        <div class="mock-stat-label">CO₂ Capturado</div>
+                                        <div class="mock-stat-value">12.4 ton</div>
+                                        <div class="mock-stat-bar"><div class="mock-bar-fill" style="width: 78%"></div></div>
+                                    </div>
+                                    <div class="mock-stat-card blue">
+                                        <div class="mock-stat-label">Agua Purificada</div>
+                                        <div class="mock-stat-value">8,200 L</div>
+                                        <div class="mock-stat-bar"><div class="mock-bar-fill" style="width: 65%"></div></div>
+                                    </div>
+                                    <div class="mock-stat-card light">
+                                        <div class="mock-stat-label">Germinación</div>
+                                        <div class="mock-stat-value">87.3%</div>
+                                        <div class="mock-stat-bar"><div class="mock-bar-fill" style="width: 87%"></div></div>
+                                    </div>
+                                </div>
+                                <div class="mock-chart">
+                                    <div class="mock-map">
+                                        <div class="map-label">Mérida, Venezuela · Enjambre #1 y #2 operando</div>
+                                        <div class="heat-spots">
+                                            <div class="heat-spot spot-1" title="Sector Cuenca"></div>
+                                            <div class="heat-spot spot-2" title="Bosque Nativo"></div>
+                                            <div class="heat-spot spot-3" title="Suelo en Restauración"></div>
+                                            <div class="heat-spot spot-4" title="Micro-Sensores IoT"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         MISSION / VISION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="section mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="mv-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <circle cx="24" cy="24" r="20" fill="none" stroke="var(--green)" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="12" fill="none" stroke="var(--green)" stroke-width="1.5" opacity="0.6"/>
+                            <circle cx="24" cy="24" r="4" fill="var(--green)"/>
+                        </svg>
+                    </div>
+                    <h3>Nuestra Misión</h3>
+                    <p>
+                        Restaurar ecosistemas completos combinando biotecnología y robótica autónoma, 
+                        devolviendo el equilibrio a ambientes degradados en tiempo récord y democratizando 
+                        el acceso a datos ambientales para nuestros clientes.
+                    </p>
+                </div>
+                <div class="mv-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="mv-icon">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <path d="M24 6 L30 18 L44 20 L34 30 L36 44 L24 38 L12 44 L14 30 L4 20 L18 18 Z" fill="none" stroke="var(--blue)" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="6" fill="var(--blue)" opacity="0.2"/>
+                        </svg>
+                    </div>
+                    <h3>Visión 2035</h3>
+                    <p>
+                        Convertirnos para 2035 en la plataforma estándar de regeneración ambiental en toda 
+                        América Latina, siendo pioneros en revertir los efectos del cambio climático 
+                        mediante tecnología autónoma escalable a nivel continental.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TEAM / ORGANIZACIÓN EMPRESARIAL
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="team" class="section team">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Estructura Organizacional</span>
+                <h2 class="section-title">El Equipo Fundador (UNIMAR)</h2>
+                <p class="section-subtitle">
+                    Cinco áreas directivas perfectamente coordinadas de la Universidad de Margarita, 
+                    con roles asignados y dominio integral del modelo de negocio DeepTech.
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">JA</div>
+                        <div class="team-role-badge">CEO</div>
+                    </div>
+                    <h3>Juan Acosta</h3>
+                    <span class="team-role">CEO – Dirección Ejecutiva</span>
+                    <p>Negociación de contratos a gran escala (B2G/B2B), representación en rondas de inversión y dirección estratégica de los hubs de Mérida y Puerto Ordaz.</p>
+                </div>
+
+                <div class="team-card animate-on-scroll" style="--delay: 0.15s">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">CM</div>
+                        <div class="team-role-badge blue">CTO</div>
+                    </div>
+                    <h3>Carlos Moya</h3>
+                    <span class="team-role">CTO – Área de Tecnología</span>
+                    <p>Desarrollo de los algoritmos de vuelo en enjambre, mapeo 3D hiperespectral y arquitectura de la plataforma de monitoreo IoT.</p>
+                </div>
+
+                <div class="team-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">CY</div>
+                        <div class="team-role-badge green">CMO</div>
+                    </div>
+                    <h3>Christopher Yánez</h3>
+                    <span class="team-role">CMO – Diseño y Marketing</span>
+                    <p>Diseño UI/UX de la plataforma de clientes, identidad corporativa, modelado 3D, stands para ferias tecnológicas y campañas de captación B2B.</p>
+                </div>
+
+                <div class="team-card animate-on-scroll" style="--delay: 0.25s">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">LS</div>
+                        <div class="team-role-badge gray">CLO</div>
+                    </div>
+                    <h3>Luis Soto</h3>
+                    <span class="team-role">CLO – Área Legal</span>
+                    <p>Tramitación de licencias UAV ante el INAC, certificaciones ambientales con el Ministerio de Ecosocialismo y registro de patentes de Bio-Cápsulas.</p>
+                </div>
+
+                <div class="team-card animate-on-scroll" style="--delay: 0.3s">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">JG</div>
+                        <div class="team-role-badge dark">CFO</div>
+                    </div>
+                    <h3>Javier González</h3>
+                    <span class="team-role">CFO – Contabilidad y Finanzas</span>
+                    <p>Estructuración de costos operativos de importación, monetización por hectárea intervenida, valorización de activos y flujo de caja para inversionistas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         IMPACT NUMBERS
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="impact" class="section impact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Economía & Rentabilidad</span>
+                <h2 class="section-title">Cifras Justificadas y Coherentes</h2>
+                <p class="section-subtitle">
+                    Modelo de negocio HaaS/SaaS con altos márgenes brutos y un retorno de inversión en 11 meses.
+                </p>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card animate-on-scroll" style="--delay: 0.1s">
+                    <div class="impact-number" data-count="1200">0</div>
+                    <div class="impact-unit">USD / ha</div>
+                    <div class="impact-label">Precio del servicio B2B/B2G<br>(incluye hardware y suscripción por 1 año)</div>
+                </div>
+                <div class="impact-card animate-on-scroll" style="--delay: 0.15s">
+                    <div class="impact-number" data-count="58">0</div>
+                    <div class="impact-unit">%</div>
+                    <div class="impact-label">Margen bruto por hectárea<br>($700 ganancia sobre $500 costo)</div>
+                </div>
+                <div class="impact-card animate-on-scroll" style="--delay: 0.2s">
+                    <div class="impact-number" data-count="165">0</div>
+                    <div class="impact-unit">hectáreas</div>
+                    <div class="impact-label">Punto de equilibrio para amortizar<br>los $115.000 USD de inversión inicial</div>
+                </div>
+                <div class="impact-card animate-on-scroll" style="--delay: 0.25s">
+                    <div class="impact-number" data-count="11">0</div>
+                    <div class="impact-unit">meses</div>
+                    <div class="impact-label">Tiempo estimado para alcanzar<br>la rentabilidad operativa plena</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         INTERACTIVE CALCULATOR SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="calculator" class="section calculator-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Herramienta Interactiva</span>
+                <h2 class="section-title">Calculadora de Impacto & RSE</h2>
+                <p class="section-subtitle">
+                    Simula la intervención ambiental y económica según la superficie a restaurar con el sistema Eco-Enjambre V3.
+                </p>
+            </div>
+
+            <div class="calculator-card animate-on-scroll">
+                <div class="calc-controls">
+                    <div class="calc-label-row">
+                        <span>Superficie a intervenir:</span>
+                        <div class="calc-ha-display" id="calcHaDisplay">100 ha</div>
+                    </div>
+                    <input type="range" min="10" max="500" value="100" step="5" class="calc-slider" id="calcSlider">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
+                        <span>10 ha (Piloto)</span>
+                        <span>165 ha (Punto de Equilibrio)</span>
+                        <span>500 ha (Corporativo)</span>
+                    </div>
+                </div>
+
+                <div class="calc-results-grid">
+                    <div class="calc-result-box">
+                        <div class="calc-res-val" id="resInvestment" style="color: var(--green-light);">$120.000 USD</div>
+                        <div class="calc-res-label">Inversión Total del Servicio<br>($1.200 USD/ha)</div>
+                    </div>
+                    <div class="calc-result-box">
+                        <div class="calc-res-val" id="resTime" style="color: var(--blue-light);">4 meses (vs 14 m)</div>
+                        <div class="calc-res-label">Tiempo de Recuperación<br>(Reducción del 70%)</div>
+                    </div>
+                    <div class="calc-result-box">
+                        <div class="calc-res-val" id="resCO2">2.450 ton/año</div>
+                        <div class="calc-res-label">Captura Proyectada de CO₂<br>(Créditos de Carbono)</div>
+                    </div>
+                    <div class="calc-result-box">
+                        <div class="calc-res-val" id="resWater" style="color: #60a5fa;">15.000.000 L</div>
+                        <div class="calc-res-label">Agua Descontaminada<br>(Neutralización hídrica)</div>
+                    </div>
+                </div>
+
+                <div class="calc-comparison-banner">
+                    <div class="comparison-stat">
+                        <div class="comp-icon">🌱</div>
+                        <div class="comp-text">
+                            <strong id="resCapsules">250.000 Bio-Cápsulas</strong>
+                            <span>Disparadas con micelio y semillas endémicas</span>
+                        </div>
+                    </div>
+                    <div class="comparison-stat">
+                        <div class="comp-icon">🛰️</div>
+                        <div class="comp-text">
+                            <strong>Sensores IoT en Malla</strong>
+                            <span>Monitoreo 24/7 en Dashboard de Impacto</span>
+                        </div>
+                    </div>
+                    <a href="#invest" class="btn btn-primary" style="padding: 0.75rem 1.4rem; font-size: 0.9rem;">
+                        <span>Solicitar Propuesta B2B / B2G</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FAQ / DEFENSA ANTE EVALUADORES UNIMAR
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="faq" class="section faq-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Defensa Empresarial</span>
+                <h2 class="section-title">Respuestas Clave para Evaluadores</h2>
+                <p class="section-subtitle">
+                    Preparación rigurosa ante jurados e inversionistas: fundamentación técnica, legal y financiera de SymbioTierra.
+                </p>
+            </div>
+
+            <div class="faq-accordion animate-on-scroll">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        <span>¿Por qué decidieron crear SymbioTierra y no una consultora tradicional?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Porque la reforestación tradicional es lenta, manual y peligrosa en zonas agrestes. Al estudiar imágenes satelitales de la deforestación y la contaminación hídrica en el sur de Venezuela y la Amazonía, el equipo de <strong>Ingeniería de Sistemas de UNIMAR</strong> comprendió que la velocidad de degradación solo puede ser superada mediante automatización industrial escalable: enjambres de drones coordinados por IA y biotecnología fúngica acelerada.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuál es el factor diferenciador que ningún competidor ofrece?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Las fundaciones tradicionales y consultoras ofrecen siembra manual y reportes estáticos en papel o Excel que tardan meses. <strong>SymbioTierra es la única solución que interviene tierra y agua simultáneamente de forma 100% autónoma</strong>, reduciendo los tiempos en un 70% y brindando al cliente un <strong>Dashboard de Impacto en tiempo real</strong> con datos auditables para el cumplimiento de RSE y normativas ecológicas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo sustentan la valoración de $1,5 millones USD y el uso de los $150.000 USD?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La valoración se basa en la propiedad intelectual propietaria (algoritmos de IA de enjambre y patentes de las Bio-Cápsulas) y en el potencial de escalabilidad continental (mercado objetivo en Venezuela, Brasil y Colombia). Con <strong>$150.000 USD por el 10% de participación</strong>, se establecerán los dos laboratorios de biotecnología fúngica en Mérida y Puerto Ordaz y se fabricarán los primeros 5 enjambres operativos. El punto de equilibrio se alcanza en solo <strong>165 hectáreas (11 meses)</strong> con un margen bruto del 58% ($700 por hectárea).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué marco legal y permisos respaldan las operaciones en Venezuela?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El área Legal (CLO Luis Soto) tiene estructurada la tramitación de permisos de vuelo y certificación de pilotos UAV ante el <strong>INAC (Instituto Nacional de Aeronáutica Civil)</strong>, la certificación de impacto ambiental y uso exclusivo de especies nativas no invasivas ante el <strong>Ministerio de Ecosocialismo</strong>, y el registro de patentes de las Bio-Cápsulas y propiedad intelectual de software ante el SAPI.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuál es el principal riesgo identificado y cómo se mitiga?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El principal riesgo es no levantar el capital ángel en el tiempo proyectado. Para mitigarlo, se contempla un modelo de preventa escalonada de hectáreas a <strong>corporaciones agrícolas y extractivas obligadas por ley a cumplir cuotas de mitigación</strong>, lo que permite financiar el hardware mediante contratos iniciales B2B antes de requerir rondas de capital de riesgo mayores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         INVEST CTA / MODALIDAD A (BÚSQUEDA DE INVERSIONISTAS)
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="invest" class="section invest">
+        <div class="container">
+            <div class="invest-wrapper animate-on-scroll">
+                <div class="invest-bg-pattern"></div>
+                <div class="invest-content">
+                    <span class="section-tag light">Ronda Semilla · Modalidad A</span>
+                    <h2 class="invest-title">Invierte en la próxima frontera DeepTech de América Latina</h2>
+                    <p class="invest-subtitle">
+                        Buscamos <strong>$150.000 USD</strong> de inversión ángel por el 
+                        <strong>10%</strong> de participación accionaria para construir los laboratorios fúngicos 
+                        en Mérida y Puerto Ordaz y desplegar los primeros 5 enjambres operativos.
+                    </p>
+
+                    <div class="invest-details">
+                        <div class="invest-detail">
+                            <span class="invest-detail-label">Valoración Post-Money</span>
+                            <span class="invest-detail-value">$1.5M USD</span>
+                        </div>
+                        <div class="invest-detail">
+                            <span class="invest-detail-label">Capital Solicitado</span>
+                            <span class="invest-detail-value">$150.000 USD</span>
+                        </div>
+                        <div class="invest-detail">
+                            <span class="invest-detail-label">Participación Ofrecida</span>
+                            <span class="invest-detail-value">10% Equity</span>
+                        </div>
+                        <div class="invest-detail">
+                            <span class="invest-detail-label">Punto de Equilibrio</span>
+                            <span class="invest-detail-value">≈ 165 hectáreas (11 m)</span>
+                        </div>
+                    </div>
+
+                    <div class="invest-use">
+                        <h4>Destino Estratégico del Capital ($115K iniciales + $35K reserva):</h4>
+                        <div class="invest-bars">
+                            <div class="invest-bar-item">
+                                <div class="invest-bar-info">
+                                    <span>Equipos, drones y sensores IoT</span>
+                                    <span>$45.000 USD (39%)</span>
+                                </div>
+                                <div class="invest-bar"><div class="invest-bar-fill" style="--width: 39%"></div></div>
+                            </div>
+                            <div class="invest-bar-item">
+                                <div class="invest-bar-info">
+                                    <span>Personal técnico especializado (pilotos, biólogos, devs)</span>
+                                    <span>$30.000 USD (26%)</span>
+                                </div>
+                                <div class="invest-bar"><div class="invest-bar-fill" style="--width: 26%"></div></div>
+                            </div>
+                            <div class="invest-bar-item">
+                                <div class="invest-bar-info">
+                                    <span>Desarrollo tecnológico (algoritmos IA + dashboard)</span>
+                                    <span>$20.000 USD (17%)</span>
+                                </div>
+                                <div class="invest-bar"><div class="invest-bar-fill" style="--width: 17%"></div></div>
+                            </div>
+                            <div class="invest-bar-item">
+                                <div class="invest-bar-info">
+                                    <span>Materia prima de laboratorios (Bio-Cápsulas y biopolímeros)</span>
+                                    <span>$15.000 USD (13%)</span>
+                                </div>
+                                <div class="invest-bar"><div class="invest-bar-fill" style="--width: 13%"></div></div>
+                            </div>
+                            <div class="invest-bar-item">
+                                <div class="invest-bar-info">
+                                    <span>Gestión legal, patentes INAC / Minec y contingencias</span>
+                                    <span>$5.000 USD (5%)</span>
+                                </div>
+                                <div class="invest-bar"><div class="invest-bar-fill" style="--width: 5%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="mailto:inversiones@symbiotierra.com?subject=Propuesta%20de%20Inversion%20SymbioTierra" class="btn btn-primary btn-large">
+                            <span>Reunirse con el CEO (Juan Acosta)</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <button class="btn btn-outline btn-large" id="standTriggerPill">
+                            <span>🛰️ Modo Stand / Simulador en Vivo</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         ROADMAP
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="section roadmap">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Proyección 2026 - 2035</span>
+                <h2 class="section-title">Hoja de Ruta Estratégica</h2>
+            </div>
+
+            <div class="roadmap-timeline">
+                <div class="roadmap-item animate-on-scroll" style="--delay: 0.1s">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-year">2026</span>
+                        <h4>Fase Seed (MVP & Laboratorios)</h4>
+                        <p>Establecimiento de los laboratorios en Mérida y Puerto Ordaz. Fabricación de los primeros 5 enjambres Eco-Enjambre V3.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item animate-on-scroll" style="--delay: 0.2s">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-year">2027</span>
+                        <h4>Expansión Nacional Venezuela</h4>
+                        <p>Alianzas consolidadas con 2 ministerios y 3 grandes corporaciones. Despliegue en Andes y cuenca del río Caroní.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item animate-on-scroll" style="--delay: 0.3s">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-year">2029</span>
+                        <h4>Región Amazónica & Polinizadores</h4>
+                        <p>Expansión transfronteriza a la Amazonía compartida con Brasil y Colombia. Lanzamiento de «Micro-drones polinizadores» agrícolas.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item animate-on-scroll" style="--delay: 0.4s">
+                    <div class="roadmap-dot active"></div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-year">2035</span>
+                        <h4>Estándar Continental LATAM</h4>
+                        <p>Consolidación como la plataforma de referencia en regeneración ecológica y mitigación climática en América Latina.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 40 40" width="38" height="38">
+                                <circle cx="20" cy="20" r="18" fill="none" stroke="var(--green)" stroke-width="2"/>
+                                <path d="M20 6 C13 15, 8 22, 20 34 C32 22, 27 15, 20 6Z" fill="var(--green)" opacity="0.85"/>
+                                <circle cx="20" cy="8" r="3.5" fill="var(--blue)"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Symbio<span class="logo-accent">Tierra</span></span>
+                    </a>
+                    <p style="margin: 1rem 0; color: var(--text-secondary);">«Reescribiendo el código de la naturaleza.»</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                        Universidad de Margarita (UNIMAR) · Ingeniería de Sistemas<br>
+                        Cátedra: Introducción a la Ingeniería de Sistemas · Docente: Oswuald Hernández
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                                <circle cx="12" cy="12" r="5"/>
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <a href="#about">El Problema</a>
+                    <a href="#service">Sistema Eco-Enjambre V3</a>
+                    <a href="#drone-3d">Dron 3D Interactivo</a>
+                    <a href="#biocapsule">Anatomía Bio-Cápsula</a>
+                    <a href="#technology">Tecnología DeepTech</a>
+                    <a href="#dashboard">Dashboard en Vivo</a>
+                    <a href="#calculator">Calculadora de ROI</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Directiva & Contacto</h4>
+                    <a href="#team">Juan Acosta (CEO)</a>
+                    <a href="#team">Carlos Moya (CTO)</a>
+                    <a href="#team">Christopher Yánez (CMO)</a>
+                    <a href="#team">Luis Soto (CLO)</a>
+                    <a href="#team">Javier González (CFO)</a>
+                    <a href="mailto:inversiones@symbiotierra.com" style="color: var(--green-light); margin-top: 0.5rem;">inversiones@symbiotierra.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SymbioTierra S.A.S. Todos los derechos reservados.</p>
+                <p>EcoTech · Biotecnología Ambiental · Robótica Autónoma</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         MODAL 1: PLANOS CAD 2D DEL DRON (RENDER BLUEPRINT)
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="blueprint-modal" id="blueprintModal" role="dialog" aria-modal="true">
+        <div class="blueprint-modal-inner">
+            <div class="stand-modal-header">
+                <div class="stand-modal-title">
+                    <span class="badge-dot"></span>
+                    <span id="blueprintModalTitleText">Plano Técnico Oficial de Ingeniería · Con Logotipo SymbioTierra</span>
+                </div>
+                <div style="display: flex; gap: 0.8rem; align-items: center; margin-left: auto; margin-right: 1.5rem;">
+                    <button class="btn btn-outline" id="toggleBlueprintView" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        <span>🖼️ Ver Render CAD Puro</span>
+                    </button>
+                </div>
+                <span class="stand-modal-close" id="blueprintModalClose">&times;</span>
+            </div>
+            <div class="blueprint-img-wrap">
+                <img id="blueprintModalImg" src="assets/images/symbiotierra-drone-blueprint.svg" alt="Plano de Ingeniería Oficial SymbioTierra con Logotipo">
+            </div>
+            <div style="padding: 1rem 1.5rem; background: #141B26; font-size: 0.85rem; color: var(--text-secondary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <img src="assets/brand/symbiotierra-icon.svg" width="24" height="24" alt="Icono SymbioTierra">
+                    <span>Plano Técnico Aprobado · UNIMAR Ingeniería de Sistemas · Sello de Identidad Corporativa</span>
+                </div>
+                <div style="display: flex; gap: 0.6rem;">
+                    <a href="assets/images/symbiotierra-drone-blueprint.svg" id="blueprintDownloadLink" download="Plano-Oficial-SymbioTierra-V3.svg" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.82rem;">
+                        <span>📥 Descargar Plano Técnico (SVG)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         MODAL 2: MODO STAND UNIMAR / SIMULADOR RADAR EN VIVO
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="stand-modal" id="standModal" role="dialog" aria-modal="true">
+        <div class="stand-modal-container">
+            <div class="stand-modal-header">
+                <div class="stand-modal-title">
+                    <span class="stand-pill-beacon"></span>
+                    <span>Consola de Telemetría Eco-Enjambre V3 (Stand UNIMAR)</span>
+                </div>
+                <span class="stand-modal-close" id="standModalClose">&times;</span>
+            </div>
+            <div class="stand-modal-body">
+                <div class="stand-radar-display">
+                    <div class="radar-sweep"></div>
+                    <div class="radar-circles"></div>
+                    <div class="radar-crosshair-x"></div>
+                    <div class="radar-crosshair-y"></div>
+                    <div class="drone-target-dot" style="left: 45%; top: 38%;" title="Dron Alpha-1 (Escaneo)"></div>
+                    <div class="drone-target-dot" style="left: 62%; top: 55%;" title="Dron Beta-2 (Dispersión)"></div>
+                    <div class="drone-target-dot" style="left: 30%; top: 68%;" title="Dron Gamma-3 (Purificación)"></div>
+                    <div style="position: absolute; bottom: 8px; left: 12px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--green-light);">
+                        RADAR 3D HI-RES · MÉRIDA ANDES · ZONA INTERVENIDA
+                    </div>
+                </div>
+
+                <div class="stand-telemetry-panel">
+                    <div class="stand-telemetry-header">
+                        <span>ESTADO DEL ENJAMBRE:</span>
+                        <strong style="color: #4ade80;">EN VUELO AUTÓNOMO</strong>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem;">
+                        <div>
+                            <span style="color: var(--text-muted); display: block;">Altitud de Vuelo:</span>
+                            <strong style="color: var(--text-white); font-family: var(--font-mono);">42.8 m AGL</strong>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); display: block;">Velocidad Crucero:</span>
+                            <strong style="color: var(--text-white); font-family: var(--font-mono);">18.4 km/h</strong>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); display: block;">Bio-Cápsulas en Tolva:</span>
+                            <strong style="color: var(--green-light); font-family: var(--font-mono);" id="standRemainingCapsules">450</strong> <span style="font-size: 0.75rem;">/ 500</span>
+                        </div>
+                        <div>
+                            <span style="color: var(--text-muted); display: block;">Enlace Satelital:</span>
+                            <strong style="color: var(--blue-light); font-family: var(--font-mono);">LoRaWAN 915 MHz</strong>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.8rem; font-size: 0.82rem; color: var(--text-secondary);">
+                        <strong style="color: var(--text-white); display: block; margin-bottom: 0.25rem;">Demostración para Evaluadores:</strong>
+                        Presione el disparador para simular la liberación balística de Bio-Cápsulas sobre el terrario en el stand.
+                    </div>
+
+                    <button class="btn btn-primary" id="fireCapsuleBtn" style="width: 100%; margin-top: auto;">
+                        <span>🎯 Disparar Bio-Cápsula de Semillas</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SCRIPTS (LOCAL OFFLINE-READY THREE.JS + ENGINE)
+    ═══════════════════════════════════════════════════════════════ -->
+    <script src="js/vendor/three.min.js"></script>
+    <script src="js/vendor/OrbitControls.js"></script>
+    <script src="js/drone-viewer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="100%" height="100%" style="background-color: #0b1118; font-family: 'Space Grotesk', 'Inter', monospace;">
+  <defs>
+    <!-- Technical Blueprint Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(30, 111, 235, 0.12)" stroke-width="0.8"/>
+      <path d="M 200 0 L 0 0 0 200" fill="none" stroke="rgba(47, 168, 79, 0.2)" stroke-width="1.2"/>
+    </pattern>
+    <filter id="badgeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#2FA84F" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background Grid -->
+  <rect width="100%" height="100%" fill="#0A0E15"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- Outer Technical Blueprint Border -->
+  <rect x="25" y="25" width="1550" height="950" fill="none" stroke="#2FA84F" stroke-width="2.5" opacity="0.85"/>
+  <rect x="35" y="35" width="1530" height="930" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+
+  <!-- Coordinate Marks (Grid A-F, 1-8) -->
+  <g fill="#6B7280" font-size="12" font-weight="600">
+    <text x="50" y="22">A</text><text x="400" y="22">B</text><text x="800" y="22">C</text><text x="1200" y="22">D</text><text x="1550" y="22">E</text>
+    <text x="12" y="50">1</text><text x="12" y="300">2</text><text x="12" y="600">3</text><text x="12" y="900">4</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HEADER BAR WITH OFFICIAL SYMBIOTIERRA BRANDING
+       ═══════════════════════════════════════════════════════════════ -->
+  <g transform="translate(60, 55)">
+    <!-- Official Logo Icon -->
+    <g transform="scale(0.85)" filter="url(#badgeGlow)">
+      <path d="M 22 105 C 8 72 16 32 60 16 C 96 2 116 14 118 16 C 114 45 92 96 46 109 C 36 112 25 111 22 105 Z" fill="#2FA84F"/>
+      <path d="M 32 94 Q 64 64 94 36" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <circle cx="120" cy="16" r="11" fill="#1E6FEB"/>
+      <circle cx="117.5" cy="13.5" r="3.2" fill="#FFFFFF"/>
+    </g>
+    <!-- Brand Title -->
+    <text x="120" y="58" font-size="34" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">
+      Symbio<tspan fill="#2FA84F">Tierra</tspan>
+    </text>
+    <text x="122" y="82" font-size="13" font-weight="600" fill="#4ade80" letter-spacing="3">
+      DIVISIÓN DE ROBÓTICA & BIOTECNOLOGÍA AMBIENTAL
+    </text>
+    <text x="580" y="60" font-size="20" font-weight="700" fill="#9CA3AF">
+      PLANO DE CONSTRUCCIÓN: <tspan fill="#FFFFFF">SISTEMA ECO-ENJAMBRE V3 (HEXACÓPTERO)</tspan>
+    </text>
+    <text x="580" y="82" font-size="12" font-weight="500" fill="#6B7280">
+      CÓDIGO DE PATENTE: VE-2026-BIOUAV-003 · ESCALA 1:12 · UNIMAR INGENIERÍA DE SISTEMAS
+    </text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CENTRAL EMBEDDED DRONE RENDERS (WITH OVERLAY ANNOTATIONS)
+       ═══════════════════════════════════════════════════════════════ -->
+  <g transform="translate(60, 160)">
+    <!-- Base CAD Render Image Frame -->
+    <rect x="0" y="0" width="1080" height="780" fill="#0E141D" rx="10" stroke="rgba(47, 168, 79, 0.3)" stroke-width="1.5"/>
+    <image href="drone-blueprint.jpg" x="10" y="10" width="1060" height="760" preserveAspectRatio="xMidYMid meet" opacity="0.95"/>
+
+    <!-- OVERLAID OFFICIAL SYMBIOTIERRA LOGO ON TOP OF THE DRONE DORSAL FUSELAGE -->
+    <!-- Positioned directly on the central top-deck plate of the drone render -->
+    <g transform="translate(305, 335) scale(0.48)" filter="url(#badgeGlow)">
+      <circle cx="65" cy="65" r="70" fill="rgba(20, 26, 34, 0.9)" stroke="#2FA84F" stroke-width="4"/>
+      <path d="M 22 105 C 8 72 16 32 60 16 C 96 2 116 14 118 16 C 114 45 92 96 46 109 C 36 112 25 111 22 105 Z" fill="#2FA84F"/>
+      <path d="M 32 94 Q 64 64 94 36" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <circle cx="120" cy="16" r="11" fill="#1E6FEB"/>
+      <circle cx="117.5" cy="13.5" r="3.2" fill="#FFFFFF"/>
+      <text x="65" y="152" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="middle">Symbio<tspan fill="#2FA84F">Tierra</tspan></text>
+    </g>
+
+    <!-- Technical Callout Lines & Callout Badges -->
+    <!-- 1. Top View Callout: Envergadura -->
+    <line x1="85" y1="50" x2="85" y2="720" stroke="#1E6FEB" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <line x1="75" y1="50" x2="95" y2="50" stroke="#1E6FEB" stroke-width="2"/>
+    <line x1="75" y1="720" x2="95" y2="720" stroke="#1E6FEB" stroke-width="2"/>
+    <text x="95" y="390" font-size="13" font-weight="700" fill="#60a5fa" transform="rotate(-90 95 390)">ENVERGADURA: 1.250 mm</text>
+
+    <!-- 2. Callout: Tolva de Bio-Cápsulas (Right side view) -->
+    <line x1="820" y1="420" x2="940" y2="390" stroke="#2FA84F" stroke-width="1.5"/>
+    <circle cx="820" cy="420" r="4" fill="#2FA84F"/>
+    <rect x="940" y="370" width="130" height="42" fill="#15202B" stroke="#2FA84F" rx="4"/>
+    <text x="950" y="388" font-size="11" font-weight="700" fill="#4ade80">TOLVA BALÍSTICA</text>
+    <text x="950" y="402" font-size="9" fill="#9CA3AF">4 Cartuchos Presurizados</text>
+
+    <!-- 3. Callout: Gimbal Hiperespectral -->
+    <line x1="780" y1="560" x2="920" y2="590" stroke="#1E6FEB" stroke-width="1.5"/>
+    <circle cx="780" cy="560" r="4" fill="#1E6FEB"/>
+    <rect x="920" y="570" width="140" height="42" fill="#15202B" stroke="#1E6FEB" rx="4"/>
+    <text x="930" y="588" font-size="11" font-weight="700" fill="#60a5fa">GIMBAL 3 EJES</text>
+    <text x="930" y="602" font-size="9" fill="#9CA3AF">Cámara NDVI & Térmica</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       RIGHT COLUMN: TECHNICAL SPECIFICATIONS & ENGINEERING TITLE BLOCK
+       ═══════════════════════════════════════════════════════════════ -->
+  <g transform="translate(1160, 160)">
+    <!-- Specifications Box -->
+    <rect x="0" y="0" width="390" height="440" fill="#0E141D" rx="8" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+    
+    <g transform="translate(20, 30)">
+      <text x="0" y="0" font-size="16" font-weight="800" fill="#4ade80" letter-spacing="1">ESPECIFICACIONES DE VUELO</text>
+      
+      <g font-size="12" transform="translate(0, 25)">
+        <text x="0" y="0" fill="#9CA3AF">Tipo de Aeronave:</text>
+        <text x="350" y="0" fill="#FFFFFF" font-weight="700" text-anchor="end">Hexacóptero Autónomo (6 Rotores)</text>
+        <line x1="0" y1="10" x2="350" y2="10" stroke="rgba(255,255,255,0.06)"/>
+
+        <text x="0" y="32" fill="#9CA3AF">Estructura / Chasis:</text>
+        <text x="350" y="32" fill="#FFFFFF" font-weight="700" text-anchor="end">Fibra de Carbono 3K + Biopolímeros</text>
+        <line x1="0" y1="42" x2="350" y2="42" stroke="rgba(255,255,255,0.06)"/>
+
+        <text x="0" y="64" fill="#9CA3AF">Peso en Vacío:</text>
+        <text x="350" y="64" fill="#FFFFFF" font-weight="700" text-anchor="end">10.3 kg</text>
+        <line x1="0" y1="74" x2="350" y2="74" stroke="rgba(255,255,255,0.06)"/>
+
+        <text x="0" y="96" fill="#9CA3AF">MTOW (Peso Máx. Despegue):</text>
+        <text x="350" y="96" fill="#FFFFFF" font-weight="700" text-anchor="end">15.5 kg</text>
+        <line x1="0" y1="106" x2="350" y2="106" stroke="rgba(255,255,255,0.06)"/>
+
+        <text x="0" y="128" fill="#9CA3AF">Capacidad de Carga Útil:</text>
+        <text x="350" y="128" fill="#4ade80" font-weight="700" text-anchor="end">5.2 kg (500 Bio-Cápsulas)</text>
+        <line x1="0" y1="138" x2="350" y2="138" stroke="rgba(255,255,255,0.06)"/>
+
+        <text x="0" y="160" fill="#9CA3AF">Autonomía de Operación:</text>
+        <text x="350" y="160" fill="#FFFFFF" font-weight="700" text-anchor="end">48 min por paquete de baterías</text>
+        <line x1="0" y1="170" x2="350" y2="170" stroke="rgba(255,255,255,0.06)"/>
+
+        <text x="0" y="192" fill="#9CA3AF">Rango de Cobertura:</text>
+        <text x="350" y="192" fill="#FFFFFF" font-weight="700" text-anchor="end">25 hectáreas / hora por enjambre</text>
+        <line x1="0" y1="202" x2="350" y2="202" stroke="rgba(255,255,255,0.06)"/>
+
+        <text x="0" y="224" fill="#9CA3AF">Enlace de Datos:</text>
+        <text x="350" y="224" fill="#60a5fa" font-weight="700" text-anchor="end">LoRaWAN 915 MHz + Satelital</text>
+        <line x1="0" y1="234" x2="350" y2="234" stroke="rgba(255,255,255,0.06)"/>
+
+        <text x="0" y="256" fill="#9CA3AF">Certificación Aeronáutica:</text>
+        <text x="350" y="256" fill="#FFFFFF" font-weight="700" text-anchor="end">Normativa INAC UAV Clase II</text>
+        <line x1="0" y1="266" x2="350" y2="266" stroke="rgba(255,255,255,0.06)"/>
+
+        <text x="0" y="288" fill="#9CA3AF">Módulos Biológicos:</text>
+        <text x="350" y="288" fill="#4ade80" font-weight="700" text-anchor="end">Micelio + Semillas Endémicas</text>
+        <line x1="0" y1="298" x2="350" y2="298" stroke="rgba(255,255,255,0.06)"/>
+
+        <text x="0" y="320" fill="#9CA3AF">Velocidad Crucero / Disparo:</text>
+        <text x="350" y="320" fill="#FFFFFF" font-weight="700" text-anchor="end">18.4 km/h / 32 km/h</text>
+      </g>
+    </g>
+
+    <!-- OFFICIAL TITLE BLOCK (CARTELA DE INGENIERÍA) -->
+    <g transform="translate(0, 460)">
+      <rect x="0" y="0" width="390" height="320" fill="#121822" rx="8" stroke="#2FA84F" stroke-width="1.5"/>
+
+      <!-- University & Company Header -->
+      <rect x="0" y="0" width="390" height="50" fill="#182230" rx="8"/>
+      <text x="195" y="25" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">UNIVERSIDAD DE MARGARITA (UNIMAR)</text>
+      <text x="195" y="42" font-size="10" font-weight="600" fill="#4ade80" text-anchor="middle">FACULTAD DE INGENIERÍA · INGENIERÍA DE SISTEMAS</text>
+
+      <g font-size="11" transform="translate(18, 75)">
+        <text x="0" y="0" fill="#6B7280">EMPRESA:</text>
+        <text x="110" y="0" fill="#FFFFFF" font-weight="700">SymbioTierra S.A.S.</text>
+
+        <text x="0" y="24" fill="#6B7280">PROYECTO:</text>
+        <text x="110" y="24" fill="#4ade80" font-weight="700">Sistema Eco-Enjambre V3</text>
+
+        <text x="0" y="48" fill="#6B7280">DOCENTE:</text>
+        <text x="110" y="48" fill="#FFFFFF">Prof. Oswuald Hernández</text>
+
+        <text x="0" y="72" fill="#6B7280">EQUIPO / ROLES:</text>
+        <text x="110" y="72" fill="#9CA3AF">1. Juan Acosta (CEO)</text>
+        <text x="110" y="90" fill="#9CA3AF">2. Carlos Moya (CTO)</text>
+        <text x="110" y="108" fill="#9CA3AF">3. Christopher Yánez (CMO)</text>
+        <text x="110" y="126" fill="#9CA3AF">4. Luis Soto (CLO)</text>
+        <text x="110" y="144" fill="#9CA3AF">5. Javier González (CFO)</text>
+
+        <text x="0" y="172" fill="#6B7280">FECHA DE EXPO:</text>
+        <text x="110" y="172" fill="#FFFFFF" font-weight="700">27 / 11 / 2026</text>
+
+        <text x="0" y="196" fill="#6B7280">ESTADO LEGAL:</text>
+        <text x="110" y="196" fill="#60a5fa" font-weight="700">PATENTE & LICENCIA INAC EN TRÁMITE</text>
+      </g>
+
+      <!-- Signature Stamp Badge -->
+      <g transform="translate(230, 220)">
+        <rect x="0" y="0" width="140" height="42" fill="rgba(47, 168, 79, 0.15)" stroke="#2FA84F" stroke-width="1.5" rx="4"/>
+        <text x="70" y="18" font-size="9" font-weight="800" fill="#4ade80" text-anchor="middle">APROBADO PARA STAND</text>
+        <text x="70" y="32" font-size="8" fill="#FFFFFF" text-anchor="middle">EXPOSICIÓN EMPRESARIAL</text>
+      </g>
+    </g>
+  </g>
+</svg>
